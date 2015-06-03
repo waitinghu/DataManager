@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataList corpName="武汉科前动物生物制品有限责任公司" dataType="wareHouseIn" version="1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="兽药产品入库数据_生产企业.xsd">
+<Product productName="猪伪狂犬病活疫苗（HB－98 株）" pzwh="兽药生字（2011）170041056" >
+<Batch batchNo="140619" specification="10头份"  minPackUnit="甁" minTagUnit="盒" tagPackRatio="10" tagRatio="1:50"
+ produceDate="2014/06/06" operator="科前PDA管理员" oprDate="2014/09/09"   count="0" countUnit="0">
+<Data code="201401160000100923550993"/>
+<Data code="201401160000100923550993"/>
+<Data code="201401160000100923550993"/>
+<Data code="201401160000100923550993"/>
+</Batch>
+</Product>
+</DataList>

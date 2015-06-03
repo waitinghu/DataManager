@@ -19,5 +19,4 @@ public class DataMgActivity extends Activity {
         setContentView(R.layout.activity_data_mg);
     }
     
-    
 }
