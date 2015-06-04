@@ -1,94 +1,133 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ffa2c3ff"
-    android:orientation="vertical"
-    android:paddingBottom="@dimen/activity_vertical_margin" >
+    android:background="#ffa2c3ff" >
 
     <LinearLayout
+        android:id="@+id/top_content"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:background="#ff788add">
+        android:background="#ff788add"
+        android:orientation="horizontal" >
+
         <ImageButton
+            android:id="@+id/ibtn_Back"
             android:layout_width="36dp"
             android:layout_height="36dp"
             android:background="@drawable/ic_launcher"
-            android:id="@+id/ibtnBack"/>
+            android:contentDescription="@null" />
+
         <TextView
+            android:id="@+id/tv_Back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="返回"
-            android:textSize="22dp"
-            android:paddingTop="5dp"
             android:paddingBottom="8dp"
-            android:id="@+id/tvBack"/>
+            android:paddingTop="5dp"
+            android:text="@string/back_txt"
+            android:textSize="22sp" />
     </LinearLayout>
+
     <LinearLayout
+        android:id="@+id/date_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_below="@+id/top_content"
+        android:orientation="horizontal" >
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="起始日期："
-            android:textSize="25dp"
-            android:textColor="@android:color/black"/>
-        <DatePicker
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="截止日期："
-            android:textSize="25dp"
-            android:textColor="@android:color/black"/>
-        <DatePicker
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-       <CheckBox
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:text="全选"
-           android:textSize="25dp"
-           android:textColor="@android:color/black"
-           />
-        <CheckBox
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="已生成文件"
-            android:textSize="25dp"
+            android:text="@string/start_date"
             android:textColor="@android:color/black"
-            android:layout_marginLeft="250dp"/>
+            android:textSize="25sp" />
+
+        <com.seuic.view.DateEditText
+            android:id="@+id/start"
+            android:inputType="date"
+            android:enabled="false"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:hint="@null" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/end_date"
+            android:textColor="@android:color/black"
+            android:textSize="25sp" />
+
+        <com.seuic.view.DateEditText
+            android:id="@+id/end"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:hint="@null" />
     </LinearLayout>
 
-    <ListView
-        android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:id="@+id/lvDataMg"/>
-
-    <Button
+    <RelativeLayout
+        android:id="@+id/checkbox_group"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="生成文件"
-        android:textColor="@android:color/black"
-        android:textSize="25dp"/>
+        android:layout_below="@id/date_container"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp" >
 
-</LinearLayout>
+        <CheckBox
+            android:id="@+id/all_select_check"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="100dp"
+            android:text="@string/all_select"
+            android:textColor="@android:color/black"
+            android:textSize="25sp" />
+
+        <CheckBox
+            android:id="@+id/already_file_check"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="100dp"
+            android:text="@string/already_generate_file"
+            android:textColor="@android:color/black"
+            android:textSize="25sp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/button_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" >
+
+        <Button
+            android:id="@+id/btn_generate_file"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/generate_file"
+            android:textColor="@android:color/black"
+            android:textSize="25sp" />
+
+        <Button
+            android:id="@+id/btn_delete"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/delete"
+            android:textColor="@android:color/black"
+            android:textSize="25sp" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/data_list_containner"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/button_group"
+        android:layout_below="@+id/checkbox_group" >
+    </RelativeLayout>
+
+</RelativeLayout>
